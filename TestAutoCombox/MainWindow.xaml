@@ -1,0 +1,32 @@
+﻿<Window x:Class="TestAutoCombox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestAutoCombox"
+        mc:Ignorable="d"
+        xmlns:AutoComple="clr-namespace:AutoCompleteComboBox;assembly=AutoCompleteComboBox"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0">Data:</Label>
+        
+        <AutoComple:AutoCompleteComboBox Grid.Row="0" Grid.Column="1" KeyDown="AutoComple_KeyDown" Name="autoComple">
+            <AutoComple:AutoCompleteComboBox.SearchTypeContent>
+                <AutoComple:AutoCompleteSearchTypes SearchType="UserName"/>
+                <AutoComple:AutoCompleteSearchTypes SearchType="UserNet"/>
+            </AutoComple:AutoCompleteComboBox.SearchTypeContent>
+        </AutoComple:AutoCompleteComboBox>
+        
+        <TextBox Text="{Binding ElementName=autoComple,Mode=TwoWay,Path=SelectedValue}" Grid.Column="0" Grid.Row="1">
+            
+        </TextBox>
+    </Grid>
+</Window>
