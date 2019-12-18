@@ -6,14 +6,15 @@
              xmlns:local="clr-namespace:AutoCompleteComboBox"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" MaxHeight="1500">
-
-    <Canvas MaxHeight="1000">
+    <Canvas MaxHeight="1000" PreviewKeyDown="Canvas_PreviewKeyDown">
         <DockPanel>
-            <TextBox x:Name="autoTextBox" Height="24" MinWidth="150" TextWrapping="NoWrap" Width="153" />
-            <Button Foreground="White" BorderThickness="3" BorderBrush="White" FontSize="12" DockPanel.Dock="Right" Width="24" Height="24" Name="btnAll" Click="BtnAll_Click" Content="&#xE1FD;" FontFamily="Segoe UI Symbol"/>            
+            <TextBox x:Name="autoTextBox" Height="24" MinWidth="150" TextWrapping="NoWrap" Width="153" Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1},Path=TextBoxStyle}"  />
+            <Button Foreground="White" BorderThickness="3" BorderBrush="White" FontSize="12" 
+                    DockPanel.Dock="Right" Width="24" Height="24" Name="btnAll" Click="BtnAll_Click" Content="&#xE1FD;" FontFamily="Segoe UI Symbol" 
+                    Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1}, Path=ButtonStyle}"/>            
         </DockPanel>
-        <ListBox Name="suggestionListBox" SelectionChanged="SuggestionListBox_SelectionChanged" Background="LightYellow" Visibility="Collapsed" MinWidth="150" Margin="0 25 0 -25" Height="300" Width="Auto" 
-                 Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1},Path=Estilo}" 
+        <ListBox Name="suggestionListBox" SelectionChanged="SuggestionListBox_SelectionChanged" Visibility="Collapsed" MinWidth="150" Margin="0 25 0 -25" Height="300" Width="Auto" 
+                 Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1},Path=ListBoxStyle}" 
                  Panel.ZIndex="300" MaxHeight="500"/>
     </Canvas>
 </UserControl>

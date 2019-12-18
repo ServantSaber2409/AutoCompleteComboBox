@@ -24,9 +24,15 @@ namespace AutoCompleteComboBox
         #region DependecyProperty        
         public static readonly DependencyProperty ItemSourceProperty = DependencyProperty.Register("ItemsSource", typeof(List<IAutoCompleteSource>), typeof(AutoCompleteComboBox), new PropertyMetadata(new List<IAutoCompleteSource>()));
         public static readonly DependencyProperty SelectedValueProperty = DependencyProperty.Register("SelectedValue", typeof(int), typeof(AutoCompleteComboBox), new PropertyMetadata(0));
-        public static readonly DependencyProperty AutoStyleProperty = DependencyProperty.Register("Estilo", typeof(Style), typeof(AutoCompleteComboBox), new FrameworkPropertyMetadata(null, PropertyChangedCallback));
+        public static readonly DependencyProperty ListBoxStyleProperty = DependencyProperty.Register("ListBoxStyle", typeof(Style), typeof(AutoCompleteComboBox), new FrameworkPropertyMetadata(null, PropertyChangedCallback));
         public static readonly DependencyProperty SearchTypeProperty = DependencyProperty.Register("SearchTypeContent", typeof(List<AutoCompleteSearchTypes>), typeof(AutoCompleteComboBox), new PropertyMetadata(new List<AutoCompleteSearchTypes>()));
+        public static readonly DependencyProperty ButtonStyleProperty = DependencyProperty.Register("ButtonStyle", typeof(Style), typeof(AutoCompleteComboBox), new FrameworkPropertyMetadata(null, PropertyChangedCallback));
+        public static readonly DependencyProperty TextBoxStyleProperty = DependencyProperty.Register("TextBoxStyle", typeof(Style), typeof(AutoCompleteComboBox), new FrameworkPropertyMetadata(null, PropertyChangedCallback));
         #endregion
+
+        private const string _UserName = "UserName";
+        private const string _Id = "Id";
+
 
 
         public static void PropertyChangedCallback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
@@ -49,10 +55,22 @@ namespace AutoCompleteComboBox
             get => (int)GetValue(SelectedValueProperty);
         }
 
-        public Style Estilo
+        public Style ListBoxStyle
         {
-            get => (Style)GetValue(AutoStyleProperty);
-            set => SetValue(AutoStyleProperty, value);
+            get => (Style)GetValue(ListBoxStyleProperty);
+            set => SetValue(ListBoxStyleProperty, value);
+        }
+
+        public Style ButtonStyle
+        {
+            get => (Style)GetValue(ButtonStyleProperty);
+            set => SetValue(ButtonStyleProperty, value);
+        }
+
+        public Style TextBoxStyle
+        {
+            get => (Style)GetValue(TextBoxStyleProperty);
+            set => SetValue(TextBoxStyleProperty, value);
         }
 
         public List<AutoCompleteSearchTypes> SearchTypeContent
@@ -137,8 +155,8 @@ namespace AutoCompleteComboBox
                 if (result.Count() > 0)
                 {
                     suggestionListBox.ItemsSource = result.Distinct();
-                    suggestionListBox.DisplayMemberPath = "UserName";
-                    suggestionListBox.SelectedValue = "Id";
+                    suggestionListBox.DisplayMemberPath = _UserName;
+                    suggestionListBox.SelectedValue = _Id;
                     suggestionListBox.Visibility = Visibility.Visible;
                 }
                 else
@@ -199,10 +217,24 @@ namespace AutoCompleteComboBox
 
         private void BtnAll_Click(object sender, RoutedEventArgs e)
         {
-            suggestionListBox.ItemsSource = ItemsSource;
-            suggestionListBox.DisplayMemberPath = "UserName";
-            suggestionListBox.SelectedValue = "Id";
-            suggestionListBox.Visibility = Visibility.Visible;
+            if (suggestionListBox.Visibility == Visibility.Collapsed)
+            {
+                suggestionListBox.ItemsSource = ItemsSource;
+                suggestionListBox.DisplayMemberPath = _UserName;
+                suggestionListBox.SelectedValue = _Id;
+                suggestionListBox.Visibility = Visibility.Visible;
+            }
+            else {
+                suggestionListBox.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void Canvas_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                suggestionListBox.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

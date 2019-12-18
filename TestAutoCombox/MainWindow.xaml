@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0">Data:</Label>
 
-        <AutoComple:AutoCompleteComboBox Grid.Row="0" Grid.Column="1" KeyDown="AutoComple_KeyDown" Name="autoComple" MaxHeight="{Binding Path=ActualHeight,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Window}}}" >
+        <AutoComple:AutoCompleteComboBox Grid.Row="0" Grid.Column="1" KeyDown="AutoComple_KeyDown" Name="autoComple" MaxHeight="{Binding Path=ActualHeight,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Window}}}">
             <AutoComple:AutoCompleteComboBox.SearchTypeContent>
                 <AutoComple:AutoCompleteSearchTypes SearchType="UserName"/>
                 <AutoComple:AutoCompleteSearchTypes SearchType="UserNet"/>
