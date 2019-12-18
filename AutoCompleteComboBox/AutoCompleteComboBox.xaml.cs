@@ -71,7 +71,35 @@ namespace AutoCompleteComboBox
             autoTextBox.TextChanged += new TextChangedEventHandler(AutoTexBox_TextChanged);
             autoTextBox.PreviewKeyDown += new KeyEventHandler(AutoTexBox_PreviewKeyDown);
             suggestionListBox.SelectionChanged += new SelectionChangedEventHandler(SuggestionListBox_SelectionChanged);
+            suggestionListBox.PreviewKeyDown += new KeyEventHandler(suggestionListBox_PreviewKeyDown);
             SearchTypeContent = new List<AutoCompleteSearchTypes>();
+        }
+
+        private void suggestionListBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Down)
+            {
+                if (suggestionListBox.SelectedIndex < suggestionListBox.Items.Count)
+                    suggestionListBox.SelectedIndex = suggestionListBox.SelectedIndex + 1;
+            }
+            if (e.Key == Key.Up)
+            {
+                if (suggestionListBox.SelectedIndex > -1)
+                    suggestionListBox.SelectedIndex = suggestionListBox.SelectedIndex - 1;
+            }
+            if (e.Key == Key.Enter || e.Key == Key.Tab)
+            {
+                // Commit the selection
+                suggestionListBox.Visibility = Visibility.Collapsed;
+                e.Handled = (e.Key == Key.Enter);
+            }
+
+            if (e.Key == Key.Escape)
+            {
+                // Cancel the selection
+                suggestionListBox.ItemsSource = null;
+                suggestionListBox.Visibility = Visibility.Collapsed;
+            }
         }
 
         #region Methods
@@ -155,15 +183,26 @@ namespace AutoCompleteComboBox
 
         private void SuggestionListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            autoTextBox.TextChanged -= new TextChangedEventHandler(AutoTexBox_TextChanged);            
+            autoTextBox.TextChanged -= new TextChangedEventHandler(AutoTexBox_TextChanged);
+            suggestionListBox.PreviewKeyDown -= new KeyEventHandler(suggestionListBox_PreviewKeyDown);
             if (suggestionListBox.ItemsSource != null)
             {
                 autoTextBox.Text = suggestionListBox.SelectedItem != null ? (suggestionListBox.SelectedItem as IAutoCompleteSource).UserName : null;
                 SelectedValue = suggestionListBox.SelectedItem != null ? (suggestionListBox.SelectedItem as IAutoCompleteSource).Id : 0;
             }
             autoTextBox.TextChanged += new TextChangedEventHandler(AutoTexBox_TextChanged);
+            suggestionListBox.PreviewKeyDown += new KeyEventHandler(suggestionListBox_PreviewKeyDown);
         }
         #endregion
 
+        
+
+        private void BtnAll_Click(object sender, RoutedEventArgs e)
+        {
+            suggestionListBox.ItemsSource = ItemsSource;
+            suggestionListBox.DisplayMemberPath = "UserName";
+            suggestionListBox.SelectedValue = "Id";
+            suggestionListBox.Visibility = Visibility.Visible;
+        }
     }
 }

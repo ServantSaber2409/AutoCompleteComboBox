@@ -5,17 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AutoCompleteComboBox"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" Panel.ZIndex="10">
+             d:DesignHeight="300" d:DesignWidth="300" MaxHeight="1500">
 
-    <Canvas>
-        <TextBox x:Name="autoTextBox" 
-                 Height="25" MinWidth="150" 
-                 Margin="0,0,10,0" TextWrapping="NoWrap" />
-        <ListBox x:Name="suggestionListBox"
-                 SelectionChanged="SuggestionListBox_SelectionChanged"
-                 Background="LightYellow" 
-                 Visibility="Collapsed" 
-                 MinWidth="150" 
-                 Margin="0,25,0,-25"/>
+    <Canvas MaxHeight="1000">
+        <DockPanel>
+            <TextBox x:Name="autoTextBox" Height="24" MinWidth="150" TextWrapping="NoWrap" Width="153" />
+            <Button Foreground="White" BorderThickness="3" BorderBrush="White" FontSize="12" DockPanel.Dock="Right" Width="24" Height="24" Name="btnAll" Click="BtnAll_Click" Content="&#xE1FD;" FontFamily="Segoe UI Symbol"/>            
+        </DockPanel>
+        <ListBox Name="suggestionListBox" SelectionChanged="SuggestionListBox_SelectionChanged" Background="LightYellow" Visibility="Collapsed" MinWidth="150" Margin="0 25 0 -25" Height="300" Width="Auto" 
+                 Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1},Path=Estilo}" 
+                 Panel.ZIndex="300" MaxHeight="500"/>
     </Canvas>
 </UserControl>

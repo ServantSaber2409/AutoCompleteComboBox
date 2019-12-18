@@ -9,16 +9,16 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150" />
             <ColumnDefinition Width="150" />
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0">Data:</Label>
-        
-        <AutoComple:AutoCompleteComboBox Grid.Row="0" Grid.Column="1" KeyDown="AutoComple_KeyDown" Name="autoComple">
+
+        <AutoComple:AutoCompleteComboBox Grid.Row="0" Grid.Column="1" KeyDown="AutoComple_KeyDown" Name="autoComple" MaxHeight="{Binding Path=ActualHeight,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Window}}}" >
             <AutoComple:AutoCompleteComboBox.SearchTypeContent>
                 <AutoComple:AutoCompleteSearchTypes SearchType="UserName"/>
                 <AutoComple:AutoCompleteSearchTypes SearchType="UserNet"/>
