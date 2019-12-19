@@ -14,7 +14,7 @@
                     Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1}, Path=ButtonStyle}"/>            
         </DockPanel>
         <ListBox Name="suggestionListBox" SelectionChanged="SuggestionListBox_SelectionChanged" Visibility="Collapsed" MinWidth="150" Margin="0 25 0 -25" Height="300" Width="Auto" 
-                 Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1},Path=ListBoxStyle}" 
-                 Panel.ZIndex="300" MaxHeight="500"/>
+                 Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1},Path=ListBoxStyle}" Panel.ZIndex="3"
+                  MaxHeight="500"/>
     </Canvas>
 </UserControl>

@@ -235,16 +235,12 @@ namespace AutoCompleteComboBox
             if (e.Key == Key.Escape)
             {
                 suggestionListBox.Visibility = Visibility.Collapsed;
-            }
-        }
-
-        private void SuggestionListBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (suggestionListBox.Visibility == Visibility.Visible)
+                autoTextBox.Text = "";
+                suggestionListBox.SelectedIndex = - 1;
+                SelectedValue = 0;
+            } else if (e.Key == Key.Enter)
             {
                 suggestionListBox.Visibility = Visibility.Collapsed;
-
-                SuggestionListBox_SelectionChanged(null, null);
             }
         }
     }
