@@ -99,9 +99,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AutoCompleteComboBox\AutoCompleteComboBox.csproj">
-      <Project>{1855a574-0f4b-4cd7-9314-be366dd641d0}</Project>
-      <Name>AutoCompleteComboBox</Name>
+    <ProjectReference Include="..\..\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB.vbproj">
+      <Project>{43834662-f271-4f26-b592-ec138e6f565d}</Project>
+      <Name>AutoCompleteComboBoxVB</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
