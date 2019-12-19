@@ -18,15 +18,17 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0">Data:</Label>
 
-        <AutoComple:AutoCompleteComboBox Grid.Row="0" Grid.Column="1" KeyDown="AutoComple_KeyDown" Name="autoComple" MaxHeight="{Binding Path=ActualHeight,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Window}}}">
+
+        <AutoComple:AutoCompleteComboBox Grid.Row="0" Grid.Column="1" KeyDown="AutoComple_KeyDown" Name="autoComple" 
+                                         MaxHeight="{Binding Path=ActualHeight,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Window}}}">
             <AutoComple:AutoCompleteComboBox.SearchTypeContent>
                 <AutoComple:AutoCompleteSearchTypes SearchType="UserName"/>
                 <AutoComple:AutoCompleteSearchTypes SearchType="UserNet"/>
             </AutoComple:AutoCompleteComboBox.SearchTypeContent>
         </AutoComple:AutoCompleteComboBox>
-        
-        <TextBox Text="{Binding ElementName=autoComple,Mode=TwoWay,Path=SelectedValue}" Grid.Column="0" Grid.Row="1">
-            
+
+        <TextBox Text="{Binding ElementName=autoComple,Mode=TwoWay,Path=SelectedValue}" Grid.Column="1" Grid.Row="1" Margin="7,21,-6,-21">
+
         </TextBox>
     </Grid>
 </Window>

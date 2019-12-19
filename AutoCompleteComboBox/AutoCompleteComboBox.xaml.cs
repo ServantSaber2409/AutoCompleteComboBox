@@ -207,6 +207,7 @@ namespace AutoCompleteComboBox
             {
                 autoTextBox.Text = suggestionListBox.SelectedItem != null ? (suggestionListBox.SelectedItem as IAutoCompleteSource).UserName : null;
                 SelectedValue = suggestionListBox.SelectedItem != null ? (suggestionListBox.SelectedItem as IAutoCompleteSource).Id : 0;
+                suggestionListBox.Visibility = Visibility.Collapsed;
             }
             autoTextBox.TextChanged += new TextChangedEventHandler(AutoTexBox_TextChanged);
             suggestionListBox.PreviewKeyDown += new KeyEventHandler(suggestionListBox_PreviewKeyDown);
@@ -234,6 +235,16 @@ namespace AutoCompleteComboBox
             if (e.Key == Key.Escape)
             {
                 suggestionListBox.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void SuggestionListBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (suggestionListBox.Visibility == Visibility.Visible)
+            {
+                suggestionListBox.Visibility = Visibility.Collapsed;
+
+                SuggestionListBox_SelectionChanged(null, null);
             }
         }
     }
