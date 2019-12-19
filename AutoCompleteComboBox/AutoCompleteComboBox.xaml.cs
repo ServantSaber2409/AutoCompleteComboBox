@@ -207,7 +207,6 @@ namespace AutoCompleteComboBox
             {
                 autoTextBox.Text = suggestionListBox.SelectedItem != null ? (suggestionListBox.SelectedItem as IAutoCompleteSource).UserName : null;
                 SelectedValue = suggestionListBox.SelectedItem != null ? (suggestionListBox.SelectedItem as IAutoCompleteSource).Id : 0;
-                suggestionListBox.Visibility = Visibility.Collapsed;
             }
             autoTextBox.TextChanged += new TextChangedEventHandler(AutoTexBox_TextChanged);
             suggestionListBox.PreviewKeyDown += new KeyEventHandler(suggestionListBox_PreviewKeyDown);

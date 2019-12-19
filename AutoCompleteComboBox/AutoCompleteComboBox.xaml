@@ -5,16 +5,27 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AutoCompleteComboBox"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" MaxHeight="1500">
-    <Canvas MaxHeight="1000" PreviewKeyDown="Canvas_PreviewKeyDown">
-        <DockPanel>
-            <TextBox x:Name="autoTextBox" Height="24" MinWidth="150" TextWrapping="NoWrap" Width="153" Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1},Path=TextBoxStyle}"  />
-            <Button Foreground="White" BorderThickness="3" BorderBrush="White" FontSize="12" 
-                    DockPanel.Dock="Right" Width="24" Height="24" Name="btnAll" Click="BtnAll_Click" Content="&#xE1FD;" FontFamily="Segoe UI Symbol" 
-                    Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1}, Path=ButtonStyle}"/>            
-        </DockPanel>
-        <ListBox Name="suggestionListBox" SelectionChanged="SuggestionListBox_SelectionChanged" Visibility="Collapsed" MinWidth="150" Margin="0 25 0 -25" Height="300" Width="Auto" 
-                 Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1},Path=ListBoxStyle}" Panel.ZIndex="3"
-                  MaxHeight="500"/>
-    </Canvas>
+             d:DesignHeight="300" d:DesignWidth="300" MaxHeight="1500" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid PreviewKeyDown="Canvas_PreviewKeyDown" ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="autoTextBox" MinHeight="24" MinWidth="150" TextWrapping="NoWrap" 
+                 Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1},Path=TextBoxStyle}" Grid.Column="0"/>
+
+        <Button Foreground="White" BorderThickness="3" BorderBrush="White" FontSize="12" 
+                 MinWidth="24" MinHeight="24" Name="btnAll" Click="BtnAll_Click" Content="&#xE1FD;" FontFamily="Segoe UI Symbol" 
+                Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1}, Path=ButtonStyle}" Grid.Column="1" />
+
+        <ListBox Name="suggestionListBox" SelectionChanged="SuggestionListBox_SelectionChanged" 
+                 Visibility="Collapsed" MinWidth="150" Width="Auto" 
+                 Style="{Binding RelativeSource={RelativeSource AncestorType=local:AutoCompleteComboBox,AncestorLevel=1},Path=ListBoxStyle}" MaxHeight="200" Grid.Column="0" Grid.Row="1"/>
+
+    </Grid>
 </UserControl>

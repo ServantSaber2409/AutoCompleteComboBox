@@ -9,31 +9,34 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
-            <ColumnDefinition Width="240" />
-        </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0">Data:</Label>
-        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource LineaFormularioStyle}" Panel.ZIndex="2">
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Usuario(s):" Padding="0" Style="{StaticResource TextoFormularioStyle}"/>
-                <AutoComple:AutoCompleteComboBox KeyDown="AutoComple_KeyDown"
-                                                 Name="autoComple" Height="24"
-                                                 TextBoxStyle="{StaticResource TextBoxStyle}">
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>       
+        
+        <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource LineaFormularioStyle}" Grid.RowSpan="2">
+            <Grid ShowGridLines="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>                    
+                </Grid.RowDefinitions>
+                <Label Content="Usuario(s):" Padding="0" Style="{StaticResource TextoFormularioStyle}" Grid.Column="0" Grid.Row="0" Panel.ZIndex="1"/>
+                <AutoComple:AutoCompleteComboBox KeyDown="AutoComple_KeyDown" Name="autoComple" TextBoxStyle="{StaticResource TextBoxStyle}" Grid.Column="1" Grid.Row="0" Panel.ZIndex="2">
                     <AutoComple:AutoCompleteComboBox.SearchTypeContent>
-                        <AutoComple:AutoCompleteSearchTypes SearchType="UserName"/>
-                        <AutoComple:AutoCompleteSearchTypes SearchType="UserNet"/>
+                        <AutoComple:AutoCompleteSearchTypes SearchType="UserNet" />
+                        <AutoComple:AutoCompleteSearchTypes SearchType="UserName" />
                     </AutoComple:AutoCompleteComboBox.SearchTypeContent>
                 </AutoComple:AutoCompleteComboBox>
-            </StackPanel>
+            </Grid>
         </Border>
 
-        <TextBox Text="{Binding ElementName=autoComple,Mode=TwoWay,Path=SelectedValue}" Grid.Column="1" Grid.Row="2" Margin="0 5">
-            
-        </TextBox>
+        <!--<TextBox Text="{Binding ElementName=autoComple,Mode=TwoWay,Path=SelectedValue}" Grid.Column="0" Grid.Row="1" Margin="0 5" Height="100" Panel.ZIndex="1">
+
+        </TextBox>-->
     </Grid>
 </Window>
