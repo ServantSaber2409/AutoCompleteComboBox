@@ -1,0 +1,15 @@
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\obj\Debug\AutoCompleteComboBox.g.vb
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\obj\Debug\AutoCompleteComboBoxVB_MarkupCompile.cache
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\obj\Debug\AutoCompleteComboBoxVB_MarkupCompile.lref
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\bin\Debug\AutoCompleteComboBoxVB.dll
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\bin\Debug\AutoCompleteComboBoxVB.pdb
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\bin\Debug\AutoCompleteComboBoxVB.xml
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\obj\Debug\AutoCompleteComboBox.baml
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\obj\Debug\AutoCompleteComboBoxVB.g.resources
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\obj\Debug\AutoCompleteComboBoxVB.Resources.resources
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\obj\Debug\AutoCompleteComboBoxVB.vbproj.GenerateResource.cache
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\obj\Debug\AutoCompleteComboBoxVB.vbproj.CoreCompileInputs.cache
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\obj\Debug\AutoCompleteComboBoxVB.dll
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\obj\Debug\AutoCompleteComboBoxVB.xml
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\obj\Debug\AutoCompleteComboBoxVB.pdb
+C:\Users\XME4830\source\repos\AutoCompleteComboBoxVB\AutoCompleteComboBoxVB\obj\Debug\AutoCompleteComboBoxVB.vbprojAssemblyReference.cache

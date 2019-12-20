@@ -1,0 +1,281 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+AutoCompleteComboBoxVB
+</name>
+</assembly>
+<members>
+<member name="T:AutoCompleteComboBoxVB.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:AutoCompleteComboBoxVB.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:AutoCompleteComboBoxVB.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="F:AutoCompleteComboBoxVB.AutoCompleteComboBox.ItemSourceProperty">
+ <summary>
+ DependencyProperty para la fuente de Datos que llenará el <see cref="T:System.Windows.Controls.ListBox"/>
+ </summary>
+ <remarks>Utilizado para almacenar los datos</remarks>
+</member>
+<member name="F:AutoCompleteComboBoxVB.AutoCompleteComboBox.SelectedValueProperty">
+ <summary>
+ DependencyProperty para cuando se selecciona un dato del <see cref="T:System.Windows.Controls.ListBox"/>
+ </summary>
+ <remarks>Es el valor del <see cref="T:System.Windows.Controls.ListBoxItem"/> dentro del <see cref="T:System.Windows.Controls.ListBox"/></remarks>
+</member>
+<member name="F:AutoCompleteComboBoxVB.AutoCompleteComboBox.ListBoxStyleProperty">
+ <summary>
+ DependencyProperty para agregar el <see cref="P:System.Windows.FrameworkElement.Style"/> al <see cref="T:System.Windows.Controls.ListBox"/>
+ </summary>
+ <remarks>Se Utiliza para agregrar estilos al <see cref="T:System.Windows.Controls.Button"/></remarks>
+</member>
+<member name="F:AutoCompleteComboBoxVB.AutoCompleteComboBox.SearchTypeProperty">
+ <summary>
+ DependencyProperty para realizar el tipo de búsqueda.
+ </summary>
+ <remarks>Se Utiliza para almacenar los tipos de búsqueda</remarks>
+</member>
+<member name="F:AutoCompleteComboBoxVB.AutoCompleteComboBox.ButtonStyleProperty">
+ <summary>
+ DependencyProperty para agregar el <see cref="P:System.Windows.FrameworkElement.Style"/> al <see cref="T:System.Windows.Controls.Button"/>
+ </summary>
+ <remarks>Se Utiliza para agregrar estilos al <see cref="T:System.Windows.Controls.Button"/></remarks>
+</member>
+<member name="F:AutoCompleteComboBoxVB.AutoCompleteComboBox.TextBoxStyleProperty">
+ <summary>
+ DependencyProperty para agregar el <see cref="P:System.Windows.FrameworkElement.Style"/> al <see cref="T:System.Windows.Controls.TextBox"/>
+ </summary>
+<remarks>Se Utiliza para agregrar estilos al <see cref="T:System.Windows.Controls.Button"/></remarks>
+</member>
+<member name="F:AutoCompleteComboBoxVB.AutoCompleteComboBox._UserName">
+ <summary>
+ Constante para Nombre de Usuario
+ </summary>
+</member>
+<member name="F:AutoCompleteComboBoxVB.AutoCompleteComboBox._Id">
+ <summary>
+ Constante para Id
+ </summary>
+</member>
+<member name="M:AutoCompleteComboBoxVB.AutoCompleteComboBox.PropertyChangedCallback(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+ <summary>
+ Ejecuta el evento de cambio de Valor
+ </summary>
+ <param name="dependencyObject">Objeto de cambio</param>
+ <param name="e">evento que realiza el cambio</param>
+ <remarks>Este método se puede dejar así no necesita modificarse</remarks>
+</member>
+<member name="M:AutoCompleteComboBoxVB.AutoCompleteComboBox.PropertyChangedCallbackSearchType(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+ <summary>
+ Ejecuta el evento de cambio de Valor
+ </summary>
+ <param name="dependencyObject">Objeto de cambio</param>
+ <param name="e">evento que realiza el cambio</param>
+ <remarks>Este método se puede dejar así no necesita modificarse</remarks>
+</member>
+<member name="M:AutoCompleteComboBoxVB.AutoCompleteComboBox.suggestionListBox_PreviewKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+ <summary>
+ Evento para desplazamiento dentro del <see cref="T:System.Windows.Controls.ListBox"/>
+ </summary>
+ <param name="sender">Objecto que realizó el evento</param>
+ <param name="e">Tipo de Evento</param>
+</member>
+<member name="M:AutoCompleteComboBoxVB.AutoCompleteComboBox.AutoTexBox_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+ <summary>
+ Evento para la búsqueda de datos en la <see cref="T:System.Windows.Controls.ListBox"/>
+ </summary>
+ <param name="sender">Objeto que realizó el evento</param>
+ <param name="e">Tipo de Evento</param>
+</member>
+<member name="M:AutoCompleteComboBoxVB.AutoCompleteComboBox.AutoTexBox_PreviewKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+ <summary>
+ Evento para desplazamiento en el <see cref="T:System.Windows.Controls.TextBox"/>
+ </summary>
+ <param name="sender">Objeto que realizó el evento</param>
+ <param name="e">Tipo de Evento</param>
+</member>
+<member name="M:AutoCompleteComboBoxVB.AutoCompleteComboBox.SuggestionListBox_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+ <summary>
+ Evento para la selección en el <see cref="T:System.Windows.Controls.ListBox"/>
+ </summary>
+ <param name="sender">Objeto que realizó el evento</param>
+ <param name="e">Tipo de envento</param>
+</member>
+<member name="M:AutoCompleteComboBoxVB.AutoCompleteComboBox.BtnAll_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Evento del <see cref="T:System.Windows.Controls.Button"/>
+ </summary>
+ <param name="sender">Objeto que realizó el evento</param>
+ <param name="e">Tipo de evento</param>
+</member>
+<member name="M:AutoCompleteComboBoxVB.AutoCompleteComboBox.Canvas_PreviewKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+ <summary>
+ Evento para salir de la búsqueda.
+ </summary>
+ <param name="sender">Objeto que realizó el evento</param>
+ <param name="e">Tipo de evento</param>
+</member>
+<member name="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.ItemsSource">
+ <summary>
+ Obtiene o establece la Fuente de Datos para llenado del <see cref="T:System.Windows.Controls.ListBox"/>, mediante una <see cref="T:System.Collections.Generic.List`1"/>
+ </summary>
+ <value>Obtiene o establece la Fuente de Datos para llenado del <see cref="T:System.Windows.Controls.ListBox"/>, mediante una <see cref="T:System.Collections.Generic.List`1"/></value>
+ <remarks>Aquí se realiza la búsqueda</remarks>
+</member>
+<member name="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.SelectedValue">
+ <summary>
+ Obtiene o establece el SelectedValue del la fuente de datos <see cref="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.ItemsSource"/>
+ </summary>
+ <value>Obtiene o establece el SelectedValue del la fuente de datos <see cref="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.ItemsSource"/></value>
+ <remarks>Valor de Seleccionado</remarks>
+</member>
+<member name="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.ListBoxStyle">
+ <summary>
+ Obtiene o establece el <see cref="P:System.Windows.FrameworkElement.Style"/> del <see cref="T:System.Windows.Controls.ListBox"/>
+ </summary>
+ <value>Obtiene o establece el <see cref="P:System.Windows.FrameworkElement.Style"/> del <see cref="T:System.Windows.Controls.ListBox"/></value>
+ <remarks>Hay que colocarlo en el XAML del control</remarks>
+</member>
+<member name="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.ButtonStyle">
+ <summary>
+ Obtiene o establece el <see cref="P:System.Windows.FrameworkElement.Style"/> del <see cref="T:System.Windows.Controls.Button"/>
+ </summary>
+ <value>Obtiene o establece el <see cref="P:System.Windows.FrameworkElement.Style"/> del <see cref="T:System.Windows.Controls.Button"/></value>
+ <remarks>Hay que colocarlo en el XAML del control</remarks>
+</member>
+<member name="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.TextBoxStyle">
+ <summary>
+ Obtiene o establece el <see cref="P:System.Windows.FrameworkElement.Style"/> para el <see cref="T:System.Windows.Controls.TextBox"/>
+ </summary>
+ <value>Obtiene o establece el <see cref="P:System.Windows.FrameworkElement.Style"/> para el <see cref="T:System.Windows.Controls.TextBox"/></value>
+ <remarks>Hay que colocarlo en el XAML del control</remarks>
+</member>
+<member name="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.SearchTypeContent">
+ <summary>
+ Obtiene o establece el tipo de búsqueda que se realizará en el <see cref="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.ItemsSource"/>
+ </summary>
+ <value> Obtiene o establece el tipo de búsqueda que se realizará en el <see cref="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.ItemsSource"/></value>
+ <remarks>Hay que colocarlo en el XAML del control</remarks>
+</member>
+<member name="M:AutoCompleteComboBoxVB.AutoCompleteComboBox.#ctor">
+ <summary>
+ Inicializa un Control de Usuario para el AutoCompleteComboBox
+ </summary>
+ <remarks>Contructor del Control de Usuario</remarks>
+</member>
+<member name="M:AutoCompleteComboBoxVB.AutoCompleteComboBox.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:AutoCompleteComboBoxVB.IAutoCompleteSource">
+ <summary>
+ Interface para estandarizar la entrada de datos al <see cref="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.ItemsSource"/>
+ </summary>
+ <remarks>Estándar para el <see cref="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.ItemsSource"/> del <see cref="T:AutoCompleteComboBoxVB.AutoCompleteComboBox"/></remarks>
+</member>
+<member name="P:AutoCompleteComboBoxVB.IAutoCompleteSource.Id">
+ <summary>
+ Id de Usuario
+ </summary>
+ <value>ID usuario de NXM</value>
+ <remarks>Estandar para busqueda</remarks>
+</member>
+<member name="P:AutoCompleteComboBoxVB.IAutoCompleteSource.UserName">
+ <summary>
+ Obtiene o establece el Nombre del Usuario
+ </summary>
+ <value>Nombre de Usuario de base de datos</value>
+ <remarks>Estandar para busqueda</remarks>
+</member>
+<member name="P:AutoCompleteComboBoxVB.IAutoCompleteSource.UserNet">
+ <summary>
+ Obtiene o establece el Nombre de Red del Usuario
+ </summary>
+ <value>Usuario de RED</value>
+ <remarks>Estandar para busqueda</remarks>
+</member>
+<member name="T:AutoCompleteComboBoxVB.AutoCompleteComboBoxSource">
+ <summary>
+ Clase utilizada para llenar el <see cref="T:System.Windows.Controls.ListBox"/>
+ </summary>
+ <remarks>Usado para realizar pruebas, cada uno puede generar su propia clase, pero se debe de heredar de la interface <see cref="T:AutoCompleteComboBoxVB.IAutoCompleteSource"/></remarks>
+</member>
+<member name="M:AutoCompleteComboBoxVB.AutoCompleteComboBoxSource.#ctor(System.Int32,System.String,System.String)">
+ <summary>
+ Inicializa una nueva clase de <see cref="T:AutoCompleteComboBoxVB.AutoCompleteComboBoxSource"/>
+ </summary>
+ <param name="id">Id de Usuario</param>
+ <param name="userName">Nombre de Usuario</param>
+ <param name="userNet">Usuario de RED</param>
+ <remarks>Inicializa una nueva clase de <see cref="T:AutoCompleteComboBoxVB.AutoCompleteComboBox"/> para llenar el <see cref="T:System.Windows.Controls.ListBox"/> del <see cref="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.ItemsSource"/></remarks>
+</member>
+<member name="P:AutoCompleteComboBoxVB.AutoCompleteComboBoxSource.Id">
+ <summary>
+ Id de Usuario
+ </summary>
+ <value>Id Usuario</value>
+ <remarks>Este ID es de base de datos y es el asignado para NXM</remarks>
+</member>
+<member name="P:AutoCompleteComboBoxVB.AutoCompleteComboBoxSource.UserName">
+ <summary>
+ Nombre del Usuario
+ </summary>
+ <value>Nombre de Usuario</value>
+ <remarks>Se toma de base de datos</remarks>
+</member>
+<member name="P:AutoCompleteComboBoxVB.AutoCompleteComboBoxSource.UserNet">
+ <summary>
+ Usuario de Red
+ </summary>
+ <value>Usuario de RED</value>
+ <remarks>Se toma de base de datos</remarks>
+</member>
+<member name="T:AutoCompleteComboBoxVB.SearchType">
+ <summary>
+ Tipo de Búsqueda
+ </summary>
+ <remarks>Tipo de Búsqueda que realizará el control</remarks>
+</member>
+<member name="F:AutoCompleteComboBoxVB.SearchType.UserName">
+ <summary>
+ Nombre de Usuario
+ </summary>
+</member>
+<member name="F:AutoCompleteComboBoxVB.SearchType.UserNet">
+ <summary>
+ Usuario de Red
+ </summary>
+</member>
+<member name="T:AutoCompleteComboBoxVB.AutoCompleteSearchTypes">
+ <summary>
+ Clase Utilizada para realizar el tipo de busqueda que realizará el control
+ </summary>
+ <remarks>Utilizado para agregar el nodo en el XAML</remarks>
+</member>
+<member name="M:AutoCompleteComboBoxVB.AutoCompleteSearchTypes.#ctor">
+ <summary>
+ Inicializa una nueva instancia de la clase <see cref="T:AutoCompleteComboBoxVB.AutoCompleteSearchTypes"/> 
+ </summary>
+ <remarks>Utilizada para búsqueda en <see cref="P:AutoCompleteComboBoxVB.AutoCompleteComboBox.ItemsSource"/></remarks>
+</member>
+<member name="P:AutoCompleteComboBoxVB.AutoCompleteSearchTypes.SearchType">
+ <summary>
+ Tipo de Búsqueda
+ </summary>
+ <value>Este valor se configura en XAML para realizar la búsqueda</value>
+ <remarks>Utilizado para búsqueda</remarks>
+</member>
+</members>
+</doc>
